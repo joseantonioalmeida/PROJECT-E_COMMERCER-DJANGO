@@ -1,0 +1,30 @@
+services:
+  ecommerceapp:
+    container_name: ecommerceapp
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./ecommerceapp:/ecommerceapp
+      - ./data/web/static:/data/web/static/
+      - ./data/web/media:/data/web/media/
+    env_file:
+      - ./dotenv_files/.env
+    depends_on:
+      - psql
+    networks:
+      - django_network
+  psql:
+    container_name: psql
+    hostname: psql
+    image: postgres:15-alpine
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - ./dotenv_files/.env
+    networks:
+      - django_network
+networks:
+  django_network:
+    driver: bridge

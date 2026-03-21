@@ -18,14 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.http import HttpResponse
 
-def home(request):
-    return HttpResponse("<h1>E-commerce Rodando com Sucesso!</h1>")
 
 urlpatterns = [
+    path('', include('produto.urls')),
+    path('perfil/', include('perfil.urls')),
+    path('pedido/', include('pedido.urls')),
     path('admin/', admin.site.urls),
-    path('', home)
+
 ]
 
 if settings.DEBUG:

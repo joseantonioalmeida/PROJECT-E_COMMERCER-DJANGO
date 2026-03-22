@@ -76,7 +76,9 @@ ROOT_URLCONF = 'loja.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,6 +147,9 @@ STATIC_URL = '/static/'
 # /data/web/static
 STATIC_ROOT = DATA_DIR / 'static'
 
+STATICFILES_DIRS = [
+    os.path.join('templates/static'),
+]
 
 
 MEDIA_URL = '/media/'

@@ -157,11 +157,11 @@ MEDIA_ROOT = DATA_DIR / 'media'
 
 
 MESSAGE_TAGS = {
-    constants.INFO: 'alert-info',
     constants.DEBUG: 'alert-info',
+    constants.ERROR: 'alert-danger',
+    constants.INFO: 'alert-info',
     constants.SUCCESS: 'alert-success',
     constants.WARNING: 'alert-warning',
-    constants.ERROR: 'alert-danger',
 }
 
 # Sessão em dias: 60s * 60m * 24h * 1d

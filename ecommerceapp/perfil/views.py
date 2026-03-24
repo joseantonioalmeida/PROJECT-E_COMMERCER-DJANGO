@@ -115,7 +115,7 @@ class Criar(BasePerfil):
             self.request,
             'Você fez login e pode concluir sua compra.'
         )
-        return redirect('perfil:criar')
+        return redirect('produto:carrinho')
         return self.renderizar
 
 class Atualizar(View):

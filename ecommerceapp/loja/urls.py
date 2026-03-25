@@ -28,13 +28,7 @@ urlpatterns = [
 
 ]
 
-if settings.DEBUG:
-    # 1. Configuração do Debug Toolbar
-    import debug_toolbar
-    urlpatterns += [
-        path('__debug__/', include(debug_toolbar.urls)),
-    ]
-    
+if settings.DEBUG:    
     # 2. Configuração de arquivos estáticos/mídia
     urlpatterns += static(
         settings.MEDIA_URL, 

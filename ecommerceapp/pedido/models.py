@@ -13,6 +13,7 @@ class Pedido(models.Model):
         on_delete=models.CASCADE
     )
     total = models.FloatField()
+    qtd_total = models.PositiveIntegerField(default=1)
     status = models.CharField(
         default="C",
         max_length=1,

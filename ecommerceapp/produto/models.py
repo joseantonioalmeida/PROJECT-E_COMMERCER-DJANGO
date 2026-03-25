@@ -65,7 +65,8 @@ class Produto(models.Model):
         if not self.slug:
             slug = f'{slugify(self.nome)}'
             self.slug = slug
-        super_save = super().save(*args, **kwargs)
+        
+        super().save(*args, **kwargs)
 
         max_image_size = 800
         
